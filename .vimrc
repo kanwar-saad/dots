@@ -45,16 +45,16 @@ imap <C-@> <C-Space>
 
 
 " transfer/read and write one block of text between vim sessions
-"  " Usage:
-"   " 'from' session:
-"    " ma
-"     " move to end-of-block
-"      " xw
-"       "
-"        " 'to' session:
-"         " move to where I want block inserted
-"          " xr
-"           "
+" Usage:
+" 'from' session:
+" ma
+" move to end-of-block
+" xw
+"
+" 'to' session:
+" move to where I want block inserted
+" xr
+"
 if has("unix")
 	nmap xr :r $HOME/.vimxfer<CR>
 	nmap xw :'a,.w! $HOME/.vimxfer<CR>
