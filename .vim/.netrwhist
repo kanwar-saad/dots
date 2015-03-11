@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/workspace/git/ekanwli/spitfire/forwarding/al/api/ut/acl'
+let g:netrw_dirhist_2='/workspace/git/ekanwli/spitfire'
+let g:netrw_dirhist_3='/workspace/git/ekanwli/spitfire/forwarding/al/api/ut/acl'
+let g:netrw_dirhist_4='/workspace/git/ekanwli/spitfire/legacy/comp/pm_ipc/pm'
+let g:netrw_dirhist_5='/workspace/git/ekanwli/spitfire/platform/dnx/al/pkt/src'
+let g:netrw_dirhist_6='/home/ekanwli/.vim'
