@@ -112,17 +112,36 @@ function Test(...)
     echo mos
     let g:mos=line
     echo "Test"
-    "call setpos('.', old_pos) 
+    "call setpos('.', old_pos)
 endfunction
 
 "" Taglist shortcuts
-nnoremap <S->> :vertical resize +5<CR>   
-nnoremap <S-<> :vertical resize -5<CR>   
-nnoremap <S-+> :resize +5<CR>   
-nnoremap <S--> :resize -5<CR>   
+nnoremap <S->> :vertical resize +5<CR>
+nnoremap <S-<> :vertical resize -5<CR>
+nnoremap <S-+> :resize +5<CR>
+nnoremap <S--> :resize -5<CR>
 
 "make < > shifts keep selection
 vnoremap < <gv
 vnoremap > >gv
 
+" C Code alignment
 vmap a =gv\tsp
+
+" Generate Tags
+nnoremap <S-F11> :! ~/tags.sh <CR>
+
+function! Cppcheck_1()
+  setlocal makeprg=cppcheck\ --enable=all\ %\ |\ grep\ \"^\[*$\"
+  setlocal errorformat+=[%f:%l]\ ->\ %m,[%f:%l]:%m
+  let curr_dir = expand('%:h')
+  if curr_dir == ''
+    let curr_dir = '.'
+  endif
+  echo curr_dir
+  execute 'lcd ' . curr_dir
+  execute 'make'
+  execute 'lcd -'
+  exe   ":botright cwindow"
+  :copen
+endfunction
